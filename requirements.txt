@@ -1,4 +1,6 @@
-streamlit
-openai
-llama-index
-nltk
+streamlit==1.39.0
+openai==1.52.2
+python-dotenv==1.0.1
+python-docx==1.1.2
+pandas==2.2.3
+pypdf==4.3.1  # If you're handling PDFs too
