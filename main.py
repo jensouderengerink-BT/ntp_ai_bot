@@ -31,9 +31,9 @@ load_dotenv()
 # Initialize the OpenAI API key
 api_key = os.getenv("OPENAI_API_KEY")
 if not api_key:
-    st.error("No OpenAI API key found. Please set it in the .env file.")
-else:
-    client = OpenAI(api_key=api_key)
+    raise ValueError("No OpenAI API key found. Please set it as an environment variable.")
+
+client = openai.OpenAI(api_key=api_key)
 
 # Apply custom styling from the separate module
 apply_custom_styling()
