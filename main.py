@@ -5,7 +5,6 @@ from Components.mindmap import show_mindmap_page
 from Components.toetsing import show_toetsing_page
 from Components.homepage import show_homepage
 from Styling.styling import apply_custom_styling
-from OpenAI.openai_client import openai  # Import the initialized openai client
 
 # Page configuration (must be first)
 st.set_page_config(

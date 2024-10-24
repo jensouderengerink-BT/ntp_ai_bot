@@ -1,5 +1,6 @@
+# session_preparation.py
+import openai
 import streamlit as st
-from OpenAI.openai_client import client  # Import OpenAI client
 
 def show_session_preparation_page():
     st.markdown('<h1 class="title">Voorbereiding inhoudelijke sessies</h1>', unsafe_allow_html=True)
@@ -13,13 +14,11 @@ def show_session_preparation_page():
 
     if uploaded_file:
         st.info("Document is succesvol geüpload en wordt geanalyseerd...")
-        response = client.chat.completions.create(
+        # Process the PDF document and call GPT with the temperature value
+        response = openai.Completion.create(
             model="gpt-4",
-            messages=[
-                {"role": "system", "content": "Analyseer het document en genereer discussievragen."},
-                {"role": "user", "content": "Here is the PDF content..."}  # Add document processing logic here
-            ],
+            prompt="Analyseer het document en genereer discussievragen.",
             temperature=temperature
         )
-        # Handle the response and display generated questions (logic continues here)
-        st.write(response.choices[0].message.content)
+        # Handle the response and display generated questions
+        st.write(response.choices[0].text)

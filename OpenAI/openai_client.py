@@ -14,4 +14,4 @@ if not api_key:
 # Set the API key in the openai client
 openai.api_key = api_key
 
-# Now, `openai` can be used for API calls
+# Now `openai` is available for use in other modules.
