@@ -19,6 +19,12 @@ from Styling.styling import apply_custom_styling
 from Authentication.auth import login_form
 import os
 
+# Get the port dynamically from Heroku
+port = int(os.environ.get('PORT', 8501))  # Default to 8501 for local testing
+
+# Run Streamlit
+st._config.set_option('server.port', port)
+
 # Load environment variables
 load_dotenv()
 
